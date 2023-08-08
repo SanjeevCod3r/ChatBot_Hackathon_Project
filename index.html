@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+	<!-- ChatBot -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.convform.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+
+</head>
+
+<body>
+	<!-- ChatBot -->
+	<div class="chat_icon">
+		<i class="fa fa-comments" aria-hidden="true"></i>
+	</div>
+
+	<div class="chat_box">
+		<div class="my-conv-form-wrapper">
+			<form action="" method="GET" class="hidden">
+
+				<input type="text" name="name" data-conv-question="">
+
+				<select data-conv-question="Hello! How can I help you" name="category">
+					<option value="WebDev
+					elopment">Delivery Related Issues ?</option>
+					<option value="DigitalMarketing">Product Related Issues ?</option>
+					<option value="payment">Payment Related Issues ?</option>
+					<option value="customer_care"> Connect to Customer Care Agent</option>
+				</select>
+
+				<div data-conv-fork="category">
+					<div data-conv-case="WebDevelopment">
+						<input type="text" name="domainName" data-conv-question="Enter Order ID">
+
+
+						<select data-conv-question="Select Issue" name="category">
+							<option value="where_order">Where is my order?</option>
+							<option value="DigitalMarketing">Late Delivery?</option>
+							<option value="WebDevelopment">Contact Number of Delivery Person?</option>
+						</select>
+
+					</div>
+
+					<div data-conv-case="where_order" data-conv-fork="first-question2">
+						
+
+					</div>
+
+					<div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
+						<input type="text" name="companyName" data-conv-question="Enter Order ID">
+
+						<select data-conv-question="Select Issue" name="category">
+							<option value="WebDevelopment">Bad Quality Product Received?</option>
+							<option value="DigitalMarketing">Rotten product?</option>
+							<option value="WebDevelopment">Missing Product?</option>
+							<option value="WebDevelopment">Wrong Product Received?</option>
+						</select>
+
+					</div>
+
+					<div data-conv-case="payment">
+						<input type="text" name="domainName" data-conv-question="Enter Order ID">
+
+						<select data-conv-question="Select Issue" name="category">
+							<option value="WebDevelopment">Amount debited but order not placed</option>
+							<option value="DigitalMarketing">Amount Debited Twice</option>
+							<option value="WebDevelopment">Change payment method</option>
+						</select>
+					</div>
+
+					<div data-conv-case="customer_care">
+						<input type="text" name="domainName" data-conv-question="Enter Order ID">
+
+						<select data-conv-question="Select Issue" name="category">
+							<option value="WebDevelopment">Call Us</option>
+							<option value="DigitalMarketing">Email_Us</option>
+							<option value="WebDevelopment">Live Chat</option>
+						</select>
+
+					</div>
+				</div>
+
+				<input type="text" name="name" data-conv-question="Please, Enter your name">
+
+				<input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you."
+					data-no-answer="true">
+
+				<input data-conv-question="Enter your e-mail"
+					data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+					type="email" name="email" required placeholder="What's your e-mail?">
+
+				<select data-conv-question="Please Confirm">
+					<option value="Yes">Confirm</option>
+				</select>
+
+				<input type="text" name="name" data-conv-question="If you have any other complaints kindly Write To Us">
+
+				<select data-conv-question="Your Query has been noted" name="category">
+					<option value="WebDevelopment">Thanks</option>
+				</select>
+				
+				<select data-conv-question="Your feedback Is Required" name="category">
+					<option value="WebDevelopment">5</option>
+					<option value="DigitalMarketing">4</option>
+					<option value="WebDevelopment">3</option>
+					<option value="WebDevelopment">2</option>
+					<option value="WebDevelopment">1</option>
+				</select>
+				<input type="text" name="name" data-conv-question="Thank You! For Your feedback">
+
+			</form>
+		</div>
+	</div>
+	<!-- ChatBot end -->
+
+
+	<script type="text/javascript">
+		const order_id = [12345,25361,44521];
+		portfolioList = document.querySelectorAll('.portfolio-box');
+		portfolioList.forEach(function (portfolioPic) {
+			portfolioPic.addEventListener('click', function () {
+				bg = this.style.backgroundImage;
+				document.getElementById('port_pop_pic_bg').classList.add("active")
+				document.getElementById('port_pop_pic').style.backgroundImage = bg
+				document.getElementById('port_pop_pic').classList.add("active")
+			});
+		})
+		document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+		})
+	</script>
+
+</body>
+
+</html>
